@@ -37,7 +37,7 @@ body{
     color: #959BA4;
 }
 .btn{
-    margin-left: 280px;
+    margin-left: 150px;
     align-self: center;
     width: 58px;
     height: 33px;
@@ -94,9 +94,9 @@ body{
     font-size: 12px;
     line-height: 14px;
     align-self: center;
-    color: #C6C6C6;
+    color: #E5E5E5;
     border: 1px solid #C6C6C6;
-    background-color: white;
+    /* background-color: white; */
 }
 .right-currencies{
     margin-left: 235px;
@@ -119,8 +119,69 @@ body{
     font-size: 12px;
     line-height: 14px;
     align-self: center;
-    color: #C6C6C6;
+    color: #E5E5E5;
     border: 1px solid #C6C6C6;
-    background-color: white;
+    /* background-color: white; */
 }
 
+
+.from{
+    border: 1px solid #E5E5E5;
+    width: 259px;
+    height: 102px;
+    margin-left: 250px;
+    margin-top: 20px;
+}
+.to{
+    position: relative;
+    bottom: 103px;
+    border: 1px solid #E5E5E5;
+    width: 259px;
+    height: 102px;
+    left: 632px;
+}
+.b{
+    opacity: 0.8;
+    background-color:white;
+    position: relative;
+    cursor: pointer;
+}
+
+.b:hover {
+    opacity: 1;
+    background-color: #833AE0;
+    color: #E5E5E5;
+}
+
+
+  .b:active,
+  .active {
+    top: 0.5px;
+    left: 0.2px;
+    box-shadow: none;
+    background-color:#833AE0;
+    color: #E5E5E5;
+  }
+
+  .b2{
+    opacity: 0.8;
+    background-color:white;
+    position: relative;
+    cursor: pointer;
+}
+
+.b2:hover {
+    opacity: 1;
+    background-color: #833AE0;
+    color: #E5E5E5;
+}
+
+
+  .b2:active,
+  .active {
+    top: 0.5px;
+    left: 0.2px;
+    box-shadow: none;
+    background-color:#833AE0;
+    color: #E5E5E5;
+  }
