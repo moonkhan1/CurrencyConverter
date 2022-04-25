@@ -36,6 +36,9 @@ body{
     font-weight: 500;
     color: #959BA4;
 }
+.menu li:hover{
+    color: black;
+}
 .btn{
     margin-left: 150px;
     align-self: center;
@@ -44,6 +47,10 @@ body{
     font-size: 11px;
     background-color: white;
     border: none;
+}
+.btn:hover{
+    background-color: #833AE0;
+    color: #E5E5E5;
 }
 .label{
     /* position: absolute; */
@@ -95,7 +102,6 @@ body{
     line-height: 14px;
     align-self: center;
     color: #E5E5E5;
-    border: 1px solid #C6C6C6;
     /* background-color: white; */
 }
 .right-currencies{
@@ -120,31 +126,62 @@ body{
     line-height: 14px;
     align-self: center;
     color: #E5E5E5;
-    border: 1px solid #C6C6C6;
     /* background-color: white; */
 }
 
 
-.from{
+#from{
     border: 1px solid #E5E5E5;
     width: 259px;
     height: 102px;
     margin-left: 250px;
     margin-top: 20px;
+    text-overflow:ellipsis;
 }
-.to{
-    position: relative;
+#to{
+    /* position: relative; */
     bottom: 103px;
     border: 1px solid #E5E5E5;
     width: 259px;
     height: 102px;
-    left: 632px;
+    margin-left: 632px;
+    margin-top: -103px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+.from{
+    border: none;
+    width: 200px;
+    height: 70px;
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 5px;
+    outline: none;
+    border-style: none;
+
+}
+
+.to{
+    border: none;
+    width: 200px;
+    height: 70px;
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 5px;
+    outline: none;
+    border-style: none;
 }
 .b{
     opacity: 0.8;
     background-color:white;
     position: relative;
     cursor: pointer;
+    border: 1px solid #C6C6C6;
 }
 
 .b:hover {
@@ -156,11 +193,10 @@ body{
 
   .b:active,
   .active {
-    top: 0.5px;
-    left: 0.2px;
     box-shadow: none;
     background-color:#833AE0;
     color: #E5E5E5;
+    border-color: #833AE0
   }
 
   .b2{
@@ -168,6 +204,7 @@ body{
     background-color:white;
     position: relative;
     cursor: pointer;
+    border: 1px solid #C6C6C6;
 }
 
 .b2:hover {
@@ -179,9 +216,9 @@ body{
 
   .b2:active,
   .active {
-    top: 0.5px;
-    left: 0.2px;
+
     box-shadow: none;
     background-color:#833AE0;
     color: #E5E5E5;
+    border-color: #833AE0;
   }
