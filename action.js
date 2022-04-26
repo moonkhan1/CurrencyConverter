@@ -27,13 +27,17 @@ var con_to = document.querySelector(".to");
 var from_p = document.querySelector('.from_p')
 var to_p = document.querySelector('.to_p')
 
+var keys = /^[0-9.,\b]+$/;
+var bs = /^[\b]+$/
+fr.addEventListener('keypress', (event) =>{
+  if(!keys.test(event.key) && !bs.test(event.key)){
+    event.preventDefault()
+  }
+})
 
 // FROM - RUBLE
 fr.addEventListener('keyup', (event) => {
   fr.value = event.target.value.replace(',','.')
-  if(fr.value.match(/[a-zA-Z]+/g)){
-    event.preventDefault()
-  }
 
   if (document.getElementById("rub").classList.contains("active")) {
     fetch('https://api.exchangerate.host/latest?base=RUB').then(data => data.json())
