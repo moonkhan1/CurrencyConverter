@@ -223,4 +223,10 @@ input::-webkit-inner-spin-button{
     border-color: #833AE0;
   }
 
-  
+  p{
+      font-size: 12px;
+      font-weight: 400;
+      font-style: normal;
+      margin-left: 15px;
+      color: #c6c6c6;
+  }
