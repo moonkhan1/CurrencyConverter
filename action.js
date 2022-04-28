@@ -36,14 +36,17 @@ fr.addEventListener('keypress', (event) =>{
 })
 
 // FROM - RUBLE
-fr.addEventListener('keyup', (event) => {
+fr.addEventListener('input', (event) => {
   fr.value = event.target.value.replace(',','.')
   
-  fetch("https://api.exchangerate.host/latest/500")
+  fetch("https://api.exchangerate.host/latest")
   .then(function() {
       console.log("Online");
   }).catch(function() {
       alert("Error! Please check the internet connection!");
+      // return false
+      to.value = "Internet error"
+      return false
   });
 
   if (document.getElementById("rub").classList.contains("active")) {
