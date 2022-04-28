@@ -124,8 +124,10 @@ fr.addEventListener('input', a => runProcess(a))
         }
       // }))
       })
-      
-  
+    }}catch (err) {
+      console.log("No internet connection")
+      return false
+    }
   // FROM - USD
   if (document.getElementById("usd").classList.contains("active")) {
     fetch('https://api.exchangerate.host/latest?base=USD').then(data => data.json())
@@ -335,10 +337,8 @@ fr.addEventListener('input', a => runProcess(a))
       }
       )
   }
-}
-}catch (err) {
-  console.log("No internet connection")
-}
+
+
   }
 
 
