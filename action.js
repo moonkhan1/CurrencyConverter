@@ -35,41 +35,32 @@ fr.addEventListener('keypress', (event) =>{
   }
 })
 
-// fr.addEventListener('input', function(){
-//   var checkOnlineStatus = async () => {
-//     try {
-//       const online = await fetch("https://api.exchangerate.host/latest?");
-//       return online.status >= 200 && online.status < 300; // either true or false
-
-//     }catch (err) {
-//       alert("No internet connection")
-//       return false; // definitely offline
-//       }}
-// })
-
 // FROM - RUBLE
-var valyutaName = document.querySelectorAll('.right-currencies')
+fr.addEventListener('keyup', (event) => {
+  fr.value = event.target.value.replace(',','.')
+  
+  fetch("https://api.exchangerate.host/latest/500")
+  .then(function() {
+      console.log("Online");
+  }).catch(function() {
+      alert("Error! Please check the internet connection!");
+  });
 
-fr.addEventListener('input', a => runProcess(a))
-
-  async function runProcess(a) {
-    fr.value = a.target.value.replace(',','.')
-    try{
   if (document.getElementById("rub").classList.contains("active")) {
-    await fetch('https://api.exchangerate.host/latest?base=RUB').then(data => data.json())
+    fetch('https://api.exchangerate.host/latest?base=RUB').then(data => data.json())
       .then(data => {
         display(data);
-        // console.log(data)
-        console.log("Online");
+        console.log(data)
 
-
-        async function display(data) {
+        function display(data) {
           var entries = Object.entries(data);
+          // for (var i = 0; i < entries.length; i++) {
           if (document.getElementById("usd2").classList.contains("active")) {
-            await fetch('https://api.exchangerate.host/latest?base=USD').then(data2 => data2.json())
+            fetch('https://api.exchangerate.host/latest?base=USD').then(data2 => data2.json())
               .then(data2 => {
                 console.log(data2)
                 var entries2 = Object.entries(data2);
+                // for(var i =0; i<entries2.length;i++){
                 to.value = fr.value * entries[4][1]["USD"]
                 from_p.innerHTML = `1 RUB = ${entries[4][1]["USD"]} USD`
                 to_p.innerHTML = `1 USD = ${entries2[4][1]["RUB"]}RUB `
@@ -80,7 +71,7 @@ fr.addEventListener('input', a => runProcess(a))
 
 
           if (document.getElementById("eur2").classList.contains("active")) {
-            await fetch('https://api.exchangerate.host/latest?base=EUR').then(data2 => data2.json())
+            fetch('https://api.exchangerate.host/latest?base=EUR').then(data2 => data2.json())
               .then(data2 => {
                 console.log(data2)
                 var entries2 = Object.entries(data2);
@@ -94,7 +85,7 @@ fr.addEventListener('input', a => runProcess(a))
 
           }
           if (document.getElementById("gbp2").classList.contains("active")) {
-            await fetch('https://api.exchangerate.host/latest?base=GBP').then(data2 => data2.json())
+            fetch('https://api.exchangerate.host/latest?base=GBP').then(data2 => data2.json())
               .then(data2 => {
                 console.log(data2)
                 var entries2 = Object.entries(data2);
@@ -108,7 +99,7 @@ fr.addEventListener('input', a => runProcess(a))
 
           }
           if (document.getElementById("rub2").classList.contains("active")) {
-            await fetch('https://api.exchangerate.host/latest?base=RUB').then(data2 => data2.json())
+            fetch('https://api.exchangerate.host/latest?base=RUB').then(data2 => data2.json())
               .then(data2 => {
                 console.log(data2)
                 var entries2 = Object.entries(data2);
@@ -122,12 +113,9 @@ fr.addEventListener('input', a => runProcess(a))
 
           }
         }
-      // }))
       })
-    }}catch (err) {
-      console.log("No internet connection")
-      return false
-    }
+  }
+
   // FROM - USD
   if (document.getElementById("usd").classList.contains("active")) {
     fetch('https://api.exchangerate.host/latest?base=USD').then(data => data.json())
@@ -339,6 +327,6 @@ fr.addEventListener('input', a => runProcess(a))
   }
 
 
-  }
+})
 
 
